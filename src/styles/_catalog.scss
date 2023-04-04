@@ -1,21 +1,24 @@
 .catalog {
-  grid-template-columns: repeat(1, 1fr);
   display: grid;
+  grid-template-columns: 200px;
   gap: 48px;
+  justify-content: center;
+  margin: 0 auto;
 
-  $wides:
+  $widths:
     "2" 488px,
     "3" 768px,
     "4" 1024px;
 
   @each $i,
-    $wide in $wides {
+    $wide in $widths {
     @media (min-width:#{$wide}) {
-      grid-template-columns: repeat(#{$i}, 1fr);
+      grid-template-columns: repeat(#{$i}, 200px);
     }
   }
 
   &__card {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
